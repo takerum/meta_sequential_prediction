@@ -1,10 +1,13 @@
 # Meta-sequential prediction (MSP)
-Reproducing code for the paper *Unsupervised Learning of Equivariant Structure on Sequences*
+This repository contains the code for the NeurIPS2022 paper: *Unsupervised Learning of Equivariant Structure on Sequences*
+
+[[OpenReview]](https://openreview.net/forum?id=7b7iGkuVqlZ)
 
 ## The implementation of MSP and simultanoues block diagonalization (SBD)
 - `SeqAELSTSQ` in `./models/seqae.py` is the implementation of *meta-sequential prediction*.
 - `tracenorm_of_normalized_laplacian` in `./utils/laplacian.py` is used to calculate the block diagonalization loss in our paper.
 
+# Setup
 ## Prerequisite
 python3.7, CUDA11.2, cuDNN
 
