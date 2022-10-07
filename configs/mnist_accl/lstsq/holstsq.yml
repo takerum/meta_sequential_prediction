@@ -1,0 +1,48 @@
+batchsize: 32
+seed: 1
+max_iteration: 100000
+report_freq: 1000
+model_snapshot_freq: 10000
+manager_snapshot_freq: 50000
+num_workers: 2
+T_cond: 5
+T_pred: 5
+lr: 0.0003
+
+train_data:
+  fn: ./datasets/seq_mnist.py
+  name: SequentialMNIST
+  args:
+    root: /tmp/datasets/MNIST
+    train: True
+    T: 10
+    max_T: 10
+    max_angle_velocity_ratio: [-0.2, 0.2]
+    max_angle_accl_ratio: [-0.025, 0.025]
+    max_color_velocity_ratio: [-0.2, 0.2]
+    max_color_accl_ratio: [-0.025, 0.025]
+    max_pos: [0., 0.]
+    max_trans_accl: [0., 0.]
+    only_use_digit4: True
+
+model:
+  fn: ./models/seqae
+  name: SeqAEHOLSTSQ
+  args:
+    dim_m: 256
+    dim_a: 16
+    ch_x: 3
+    k: 2.
+    n_order: 2
+    predictive: True
+    kernel_size: 3
+
+training_loop:
+  fn: ./training_loops.py
+  name: loop_seqmodel
+  args:
+    lr_decay_iter: 80000
+    reconst_iter: 0
+
+
+

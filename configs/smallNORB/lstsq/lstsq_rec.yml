@@ -1,0 +1,41 @@
+batchsize: 32
+seed: 1
+max_iteration: 50000
+report_freq: 1000
+model_snapshot_freq: 10000
+manager_snapshot_freq: 50000
+num_workers: 6
+T_cond: 3
+T_pred: 0
+lr: 0.0003
+
+train_data:
+  fn: ./datasets/small_norb.py
+  name: SmallNORBDataset
+  args:
+    root: /tmp/datasets
+    train: True
+    T: 3
+
+model:
+  fn: ./models/seqae.py
+  name: SeqAELSTSQ
+  args:
+    dim_m: 256
+    dim_a: 16
+    ch_x: 1
+    k: 1.0
+    bottom_width: 6
+    n_blocks: 4
+    predictive: False
+
+
+training_loop:
+  fn: ./training_loops.py
+  name: loop_seqmodel
+  args:
+    lr_decay_iter: 40000
+    reconst_iter: 0
+
+
+

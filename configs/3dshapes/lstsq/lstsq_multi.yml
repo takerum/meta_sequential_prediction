@@ -1,0 +1,47 @@
+batchsize: 32
+seed: 1
+max_iteration: 50000
+report_freq: 1000
+model_snapshot_freq: 10000
+manager_snapshot_freq: 50000
+num_workers: 2
+T_cond: 2
+T_pred: 1
+lr: 0.0003
+optimizer: Adam
+
+train_data:
+  fn: ./datasets/three_dim_shapes.py
+  name: ThreeDimShapesDataset
+  args:
+    root: /tmp/datasets/3dshapes/
+    train: True
+    T: 3
+
+model:
+  fn: ./models/seqae
+  name: SeqAEMultiLSTSQ
+  args:
+    dim_m: 256
+    dim_a: 16
+    ch_x: 3
+    k: 1.0
+    bottom_width: 8
+    alignment: False
+    change_of_basis: False
+    global_average_pooling: False # Important. (Why?)
+    discretized: False
+    K: 8
+
+
+training_loop:
+  fn: ./training_loops.py
+  name: loop_seqmodel
+  args:
+
+    lr_decay_iter: 40000
+    reconst_iter: 0
+
+
+
+

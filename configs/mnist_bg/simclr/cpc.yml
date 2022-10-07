@@ -1,0 +1,41 @@
+batchsize: 64
+seed: 1
+max_iteration: 100000
+report_freq: 1000
+model_snapshot_freq: 10000
+manager_snapshot_freq: 10000
+num_workers: 6
+T_cond: 2
+T_pred: 1
+lr: 0.0003
+
+train_data:
+  fn: ./datasets/seq_mnist.py
+  name: SequentialMNIST
+  args:
+    root: /tmp/datasets/MNIST
+    train: True
+    T: 3
+    max_T: 9
+    max_angle_velocity_ratio: [-0.5, 0.5]
+    max_color_velocity_ratio: [-0.5, 0.5]
+    only_use_digit4: True
+    backgrnd: False
+
+model:
+  fn: ./models/seqae
+  name: CPC
+  args:
+    dim_m: 1
+    dim_a: 512
+    k: 4.
+    loss_type: cossim
+    normalize: True
+    temp: 0.01
+
+training_loop:
+  fn: ./training_loops.py
+  name: loop_seqmodel
+  args:
+    lr_decay_iter: 40000
+    reconst_iter: 0

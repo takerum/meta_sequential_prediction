@@ -1,0 +1,9 @@
+torch==1.10.0
+pytorch-pfn-extras
+scikit-image
+opencv-python
+pytorch_pfn_extras
+moviepy
+ffmpeg-python
+einops
+tqdm

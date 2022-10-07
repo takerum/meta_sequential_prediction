@@ -1,0 +1,46 @@
+batchsize: 32
+seed: 1
+max_iteration: 100000
+report_freq: 1000
+model_snapshot_freq: 10000
+manager_snapshot_freq: 50000
+num_workers: 2
+T_cond: 2
+T_pred: 1
+lr: 0.0003
+
+train_data:
+  fn: ./datasets/seq_mnist.py
+  name: SequentialMNIST
+  args:
+    root: /tmp/datasets/MNIST
+    train: True
+    T: 3
+    max_T: 9
+    max_angle_velocity_ratio: [-0.5, 0.5]
+    max_color_velocity_ratio: [-0.5, 0.5]
+    only_use_digit4: True
+    backgrnd: True
+
+model:
+  fn: ./models/seqae.py
+  name: SeqAEMultiLSTSQ
+  args:
+    dim_m: 256
+    dim_a: 16
+    ch_x: 3
+    k: 4.
+    predictive: True
+    K: 8
+
+
+
+training_loop:
+  fn: ./training_loops.py
+  name: loop_seqmodel
+  args:
+    lr_decay_iter: 80000
+    reconst_iter: 0
+
+
+
