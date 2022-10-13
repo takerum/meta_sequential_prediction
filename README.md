@@ -7,7 +7,7 @@
 This repository contains the code for the NeurIPS2022 paper: Unsupervised Learning of Equivariant Structure on Sequences.
 A simple encoder-decoder model trained with *meta-sequential prediction* captures the hidden disentangled structure underlying the datasets.
 
-[[OpenReview]](https://openreview.net/forum?id=7b7iGkuVqlZ)
+[[arXiv]](https://arxiv.org/abs/2210.05972) [[OpenReview]](https://openreview.net/forum?id=7b7iGkuVqlZ)
 
 ## The implementation of MSP and simultaneous block diagonalization (SBD)
 - `SeqAELSTSQ` in `./models/seqae.py` is the implementation of *meta-sequential prediction*.
