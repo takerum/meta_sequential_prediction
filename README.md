@@ -1,9 +1,7 @@
 # Meta-sequential prediction (MSP)
 <p align="center">
-<img width="650" alt="image" src="https://user-images.githubusercontent.com/11573649/195465919-53ad444e-c2dc-40c8-a4d5-99e7b072f5b2.png">
+<img width="650" alt="image" src="https://user-images.githubusercontent.com/11573649/195533146-e3cf0574-4b4b-413b-9417-eec16a1af7ae.png">
 </p>
-
-
 
 This repository contains the code for the NeurIPS2022 paper: Unsupervised Learning of Equivariant Structure on Sequences.
 A simple encoder-decoder model trained with *meta-sequential prediction* captures the hidden disentangled structure underlying the datasets.
