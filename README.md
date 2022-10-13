@@ -42,7 +42,7 @@ tar xzf  ${DATADIR_ROOT}/smallNORB.tar.gz -C $DATADIR_ROOT
 ```
 
 ## Training with MSP
-1. Select a config file for the dataset on which you want to train the model:
+1. Select the dataset on which you want to train the model:
 ```
 # Sequential MNIST
 export CONFIG=configs/mnist/lstsq/lstsq.yml
