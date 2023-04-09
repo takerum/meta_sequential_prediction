@@ -9,7 +9,7 @@ A simple encoder-decoder model trained with *meta-sequential prediction* capture
 
 [[arXiv]](https://arxiv.org/abs/2210.05972) [[OpenReview]](https://openreview.net/forum?id=7b7iGkuVqlZ)
 
-## The implementation of MSP and simultaneous block diagonalization (SBD)
+## Implementation of MSP and simultaneous block diagonalization (SBD)
 - `SeqAELSTSQ` in `./models/seqae.py` is the implementation of *meta-sequential prediction*.
 - `tracenorm_of_normalized_laplacian` in `./utils/laplacian.py` is used to calculate the block diagonalization loss in our paper.
 
@@ -27,7 +27,7 @@ Download the compressed dataset files from the following link:
 
 https://drive.google.com/drive/folders/1_uXjx06U48to9OSyGY1ezqipAbbuT0vq?usp=sharing
 
-This is an example script to download and decompress the files:
+The following is an example script to download and decompress the files:
 ```
 # If gdown is not installed:
 pip install gdown
@@ -43,7 +43,7 @@ tar xzf  ${DATADIR_ROOT}/smallNORB.tar.gz -C $DATADIR_ROOT
 ```
 
 ## Training with MSP
-1. Select the dataset on which you want to train the model:
+1. Select dataset on which you want to train the model:
 ```
 # Sequential MNIST
 export CONFIG=configs/mnist/lstsq/lstsq.yml
