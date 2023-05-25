@@ -1,6 +1,8 @@
 # Meta-sequential prediction (MSP)
+
+
 <p align="center">
-<img width="650" alt="image" src="https://user-images.githubusercontent.com/11573649/195705450-ba9331c2-8109-4bd4-8375-722681b90aec.png">
+<img width="800" alt="image" src="https://github.com/takerum/meta_sequential_prediction/assets/11573649/49b4ef84-8516-4e19-9ab0-9ff727f5b739">
 </p>
 
 
